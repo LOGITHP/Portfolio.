@@ -5,14 +5,13 @@ import { getAuth } from "firebase/auth";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBAVybkIbphKrU6xq2cdX0iE6MK-04UEKs",
-  authDomain: "portfolio-67769.firebaseapp.com",
-  databaseURL: "https://portfolio-67769-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "portfolio-67769",
-  storageBucket: "portfolio-67769.firebasestorage.app",
-  messagingSenderId: "723505469304",
-  appId: "1:723505469304:web:02999bb2e9ae30c38eda8d",
-  measurementId: "G-ZSN66XQ4LT"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.firebasestorage.app",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);

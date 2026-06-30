@@ -3,8 +3,8 @@ import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function AdminLogin({ onSuccess, onClose }) {
-  const [username, setUsername] = useState('');
-  const [secretCode, setSecretCode] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [failedAttempts, setFailedAttempts] = useState(0);
   const [lockedOut, setLockedOut] = useState(false);
@@ -19,13 +19,8 @@ export default function AdminLogin({ onSuccess, onClose }) {
     setError('');
 
     try {
-      // Map username input dynamically to a virtual Firebase Auth account
-      // e.g. "LOGITHP" -> "logithp@portfolio.com", while "logithp@portfolio.com" remains as-is
-      let mappedEmail = username.trim().toLowerCase();
-      if (!mappedEmail.includes('@')) {
-        mappedEmail += '@portfolio.com';
-      }
-      await signInWithEmailAndPassword(auth, mappedEmail, secretCode);
+      // Authenticate directly using the email and password provided by the user
+      await signInWithEmailAndPassword(auth, email.trim(), password);
       onSuccess();
     } catch (err) {
       console.error("Auth login error:", err);
@@ -77,24 +72,24 @@ export default function AdminLogin({ onSuccess, onClose }) {
         ) : (
           <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Username</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Email Address</label>
               <input 
-                type="text" 
+                type="email" 
                 className="input-field"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                autoComplete="off"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                autoComplete="email"
                 required
               />
             </div>
             
             <div>
-              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Secret Code</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>Password</label>
               <input 
                 type="password" 
                 className="input-field"
-                value={secretCode}
-                onChange={(e) => setSecretCode(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
@@ -110,3 +105,4 @@ export default function AdminLogin({ onSuccess, onClose }) {
     </div>
   );
 }
+
