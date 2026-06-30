@@ -2,52 +2,6 @@
 
 A beautiful, interactive portfolio website featuring glassmorphism design, custom layout customization via drag-and-drop, theme configurations, and a live administration dashboard powered by Firebase Realtime Database and Firebase Authentication.
 
----
-
-## 📂 Necessary Project Files (Repository Structure)
-
-To upload this project to GitHub, only the following core files and folders are required. Temp directories (`.firebase`, `node_modules`, `dist`) are ignored via `.gitignore`.
-
-```text
-├── public/                     # Static assets served directly
-│   ├── 404.html                # Custom SPA fallback page for routing
-│   ├── favicon.svg             # Website favicon
-│   └── icons.svg               # SVG icons library
-├── src/                        # React Application Source
-│   ├── assets/                 # Component assets
-│   │   └── hero.png            # Default hero avatar/image
-│   ├── components/             # Reusable UI Components
-│   │   ├── About.jsx           # About Me section (Editable)
-│   │   ├── AdminLogin.jsx      # Admin sign-in screen (Direct Email/Password)
-│   │   ├── Contact.jsx         # Contact details section (Editable)
-│   │   ├── Education.jsx       # Academic history timeline (Editable)
-│   │   ├── GallerySection.jsx  # Reusable list for Patents, Achievements, etc.
-│   │   ├── Hero.jsx            # Top hero profile summary (Editable)
-│   │   ├── Interests.jsx       # Interests tags listing (Editable)
-│   │   ├── Navbar.jsx          # Header navigation bar & Admin sign-in hook
-│   │   ├── Projects.jsx        # Project showcases layout (Editable)
-│   │   ├── Resume.jsx          # Resume view / download section (Editable)
-│   │   ├── SettingsPanel.jsx   # Layout drag-and-drop & theme admin dashboard
-│   │   └── StarryBackground.jsx# Canvas dynamic interactive space background
-│   ├── utils/                  # Helper Utilities
-│   │   ├── driveLinkConverter.js # Auto-formats Google Drive direct image links
-│   │   └── textParser.jsx      # Formats text inputs into semantic HTML paragraphs
-│   ├── App.css                 # Application-specific styles
-│   ├── App.jsx                 # Core routing, state management, and grid layout
-│   ├── index.css               # Core CSS variables, typography, design tokens, and animation presets
-│   └── main.jsx                # Application React bundle mounting entry point
-├── .firebaserc                 # Firebase CLI target project mapping
-├── .gitignore                  # Specifying untracked/ignored folders in git
-├── database.rules.json         # Firebase Realtime Database Security Rules
-├── eslint.config.js            # Code linter rules configuration
-├── firebase.json               # Firebase CLI project hosting & database configuration
-├── index.html                  # Root template loader for Vite
-├── package.json                # Project node packages, metadata, and build scripts
-├── vite.config.js              # Vite build setup config
-└── README.md                   # Project documentation guide
-```
-
----
 
 ## 🛠️ Getting Started & Installation
 
